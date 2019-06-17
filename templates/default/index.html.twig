@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello DefaultController!{% endblock %}
+
+{% block body %}
+
+    <h1>Acceuil</h1>
+
+    <h2>Liste des saisons</h2>
+
+    <ul>
+        {% for saison in saisons %}
+            <li>{{ saison.nom }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

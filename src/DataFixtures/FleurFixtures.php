@@ -12,6 +12,7 @@ class FleurFixtures extends Fixture implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $pivoine = new Fleur();
+        $pivoine->setNom("Pivoine");
         $pivoine->setPhoto("pivoine.jpg");
         $pivoine->setPrix(2.50);
         $pivoine->setDescription("La pivoine c'est bla bla bla");
