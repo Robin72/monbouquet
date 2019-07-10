@@ -13,6 +13,7 @@ class CouleurFixtures extends Fixture
         $rouge = new Couleur();
         $rouge->setNom("Rouge");
         $manager->persist($rouge);
+        $this->addReference("couleur-rouge", $rouge);
 
         $rose = new Couleur();
         $rose->setNom("Rose");
@@ -38,6 +39,11 @@ class CouleurFixtures extends Fixture
         $bleu->setNom("Bleu");
         $manager->persist($bleu);
         $this->addReference("couleur-bleu", $bleu);
+
+        $blanc = new Couleur();
+        $blanc->setNom("Blanc");
+        $manager->persist($blanc);
+        $this->addReference("couleur-blanc", $blanc);
         
         $manager->flush();
     }
