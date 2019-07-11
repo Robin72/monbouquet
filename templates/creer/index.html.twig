@@ -57,7 +57,7 @@
                 <select>
                     <option>Sélectionner</option>
                     {% for saison in saisons %}
-                        <option>{{ saison.nom }}</option>
+                        <option> value="{{ saison.id }}">{{ saison.nom }}</option>
                     {% endfor %}
                 </select>
 
