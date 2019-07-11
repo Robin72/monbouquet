@@ -111,6 +111,86 @@ a.button:hover {
 
 
 /*-------
-CONNEXION
+ PAGE INSCRIPTION
  */
+
+
+/*------------ Image de fond ---------*/
+
+div.inscription{
+
+    height: 700px;
+
+    background-image:url("../image/Groupe 2.png");
+
+    background-size: cover;
+    background-size: 100%;
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+
+
+}
+
+div.taille2{
+    padding-top: 10%;
+}
+
+/*------------- formulaire ------------*/
+
+form{
+
+}
+
+.inscription h1 {
+    font-family: 'Nunito', sans-serif;
+    color: #D69F9F;
+    text-align: right;
+}
+
+.inscription {
+    color: #ffffff;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.formulaire {
+    font-family: 'Nunito', sans-serif;
+    justify-content: center;
+    margin: 255px;
+
+}
+
+.btn {
+    font-family: 'Nunito', sans-serif;
+    color: #454545;
+    text-align: center;
+    padding: 5px 11px 5px 11px;
+    text-decoration: none;
+    border-bottom: solid 4px #fff;
+    margin: 30px;
+
+}
+
+.formulaire div {
+    margin-bottom: 10px;
+}
+
+.formulaire div label {
+    margin-right: 10px;
+}
+
+.formulaire div input {
+    border-radius: 10px;
+    border: none;
+    box-shadow: inset 0 2px 0 rgba(0,0,0,.5);
+}
+
+
+/*----
+PAGE ?
+*/
+
 
