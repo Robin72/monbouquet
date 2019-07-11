@@ -1,0 +1,33 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+
+{% block body %}
+
+    <header>
+
+        <h1>VOTRE COMPOSITION</h1>
+        <p class="titre">Personnalisez votre bouquet selon vos choix de couleur, les variétés de fleurs souhaitez et le nombre de fleurs correspndant à votre bouquet.</p>
+
+    </header>
+
+
+    <main role="main">
+
+        {% for fleur in fleurs %}
+            <div>
+                {{ fleur.nom }}
+                <ul>
+                    {% for couleur in fleur.couleurs %}
+                        <li>{{ couleur.nom }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+
+    </main>
+
+
+{% endblock %}
