@@ -2,20 +2,31 @@ security:
     encoders:
         App\Entity\Utilisateur:
             algorithm: bcrypt
+        App\Security\Yes:
+            algorithm: bcrypt
+        App\Entity\User:
+            algorithm: bcrypt
+
+
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
         # used to reload user from session & other features (e.g. switch_user)
         app_user_provider:
             entity:
-                class: App\Entity\Utilisateur
+                class: App\Entity\User
                 property: email
+        # used to reload user from session & other features (e.g. switch_user)
+        # used to reload user from session & other features (e.g. switch_user)
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
             anonymous: true
+            guard:
+                authenticators:
+                    - App\Security\LoginFormAuthenticator
 
             # activate different ways to authenticate
 
@@ -30,3 +41,4 @@ security:
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
         # - { path: ^/profile, roles: ROLE_USER }
+        # - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }

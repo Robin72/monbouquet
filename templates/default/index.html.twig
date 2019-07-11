@@ -1,17 +1,21 @@
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello DefaultController!{% endblock %}
+{% block title %}Connexion{% endblock %}
+
 
 {% block body %}
 
-    <h1>Acceuil</h1>
 
-    <h2>Liste des saisons</h2>
+    <div class="harmonie">
+        <div class="taille">
+        <h2>l'Harmonie</br>composition</h2>
+        <p>Neque porro quisquam est qui dolorem </br> ipsum quia dolor sit amet,</br> consectetur, adipisci velit…</p>
 
-    <ul>
-        {% for saison in saisons %}
-            <li>{{ saison.nom }}</li>
-        {% endfor %}
-    </ul>
+        <a href="#" class="button"><span class="user">creer mon bouquet</span></a>
+        </div>
+    </div>
+
+
 
 {% endblock %}

@@ -29,7 +29,7 @@ class Bouquet
     private $date_creation;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateur", inversedBy="bouquets")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="bouquets")
      * @ORM\JoinColumn(nullable=false)
      */
     private $utilisateur;

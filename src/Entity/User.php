@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\UtilisateurRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class Utilisateur implements UserInterface
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -25,6 +25,16 @@ class Utilisateur implements UserInterface
     private $email;
 
     /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $nom;
+
+    /**
+     * @ORM\Column(type="string", length=180, unique=true)
+     */
+    private $prenom;
+
+    /**
      * @ORM\Column(type="json")
      */
     private $roles = [];
@@ -34,26 +44,6 @@ class Utilisateur implements UserInterface
      * @ORM\Column(type="string")
      */
     private $password;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $nom;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $prenom;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Bouquet", mappedBy="utilisateur", orphanRemoval=true)
-     */
-    private $bouquets;
-
-    public function __construct()
-    {
-        $this->bouquets = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -133,58 +123,35 @@ class Utilisateur implements UserInterface
         // $this->plainPassword = null;
     }
 
-    public function getNom(): ?string
+    /**
+     * @return mixed
+     */
+    public function getNom()
     {
         return $this->nom;
     }
 
-    public function setNom(string $nom): self
+    /**
+     * @param mixed $nom
+     */
+    public function setNom($nom): void
     {
         $this->nom = $nom;
-
-        return $this;
     }
 
-    public function getPrenom(): ?string
+    /**
+     * @return mixed
+     */
+    public function getPrenom()
     {
         return $this->prenom;
     }
 
-    public function setPrenom(string $prenom): self
+    /**
+     * @param mixed $prenom
+     */
+    public function setPrenom($prenom): void
     {
         $this->prenom = $prenom;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Bouquet[]
-     */
-    public function getBouquets(): Collection
-    {
-        return $this->bouquets;
-    }
-
-    public function addBouquet(Bouquet $bouquet): self
-    {
-        if (!$this->bouquets->contains($bouquet)) {
-            $this->bouquets[] = $bouquet;
-            $bouquet->setUtilisateur($this);
-        }
-
-        return $this;
-    }
-
-    public function removeBouquet(Bouquet $bouquet): self
-    {
-        if ($this->bouquets->contains($bouquet)) {
-            $this->bouquets->removeElement($bouquet);
-            // set the owning side to null (unless already changed)
-            if ($bouquet->getUtilisateur() === $this) {
-                $bouquet->setUtilisateur(null);
-            }
-        }
-
-        return $this;
     }
 }

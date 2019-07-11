@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 
-use App\Entity\Utilisateur;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
@@ -24,7 +24,7 @@ class UtilisateurFixtures extends Fixture
 
     public function load(ObjectManager $manager)
     {
-        $admin = new Utilisateur();
+        $admin = new User();
         $admin->setNom("Jobidon");
         $admin->setPrenom("Robin");
         $admin->setEmail("robin.jobidon@gmail.com");

@@ -1,16 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-        {% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app') }}
+    {% endblock %}
+</head>
+<body>
+
+<div class="grid">
+    <div class="nav">
+
+        <ul>
+            <li><a href="{{ path('homepage') }}">acceuil</a></li>
+
+            <li><a href=" {{ path('creer') }} ">creer mon Bouquet</a></li>
+
+            <li><a href="#">occasions</a></li>
+
+            <li><a href="#">blog</a></li>
+
+            <li><a href="{{ path('app_login') }}">connexion</a></li>
+
+            <li><a href="{{ path('app_register') }}">inscription</a></li>
+        </ul>
+
+    </div>
+
+    {% block body %}{% endblock %}
+
+    <footer>
+
+        <ul>
+
+            <li> <a href="#" >
+                    <img src="../../assets/image/facebook.png" alt="#" />
+                </a> </li>
+
+            <li><a href="#">
+                    <img src="../../assets/image/instagram.png" alt="#" />
+                </a></li>
+
+            <li> <a href="#">
+                    <img src="../../assets/image/pinterest.png" alt="#" />
+                </a></li>
+        </ul>
+    </footer>
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+
+</body>
 </html>
