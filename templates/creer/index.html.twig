@@ -6,16 +6,98 @@
 
 {% block body %}
 
+    <header>
 
-    <div class="harmonie">
-        <div class="taille">
-            <h2>l'Harmonie</br>composition</h2>
-            <p>Neque porro quisquam est qui dolorem </br> ipsum quia dolor sit amet,</br> consectetur, adipisci velit…</p>
+        <h1>VOTRE COMPOSITION</h1>
+        <p class="titre">Personnalisez votre bouquet selon vos choix de couleur, les variétés de fleurs souhaitez et le nombre de fleurs correspndant à votre bouquet.</p>
 
-            <a href="#" class="button"><span class="user">creer mon bouquet</span></a>
+    </header>
+
+
+    <main role="main">
+
+        <div class="form-container">
+            <img src="{{ asset('images/bouquet1.png') }}" alt="imgbouquet" class="bouquet"/>
+            <form action="{{ path('composition') }}" method="get">
+
+                <p>Nombre de fleurs :</p>
+                <select name="nb-fleurs" size="1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                </select>
+
+                <p>Couleurs :</p>
+                <select name="couleurs[]" multiple>
+                    <option>Sélectionner</option>
+                    {% for couleur in couleurs %}
+                        <option value="{{ couleur.id }}">{{ couleur.nom }}</option>
+                    {% endfor %}
+                </select>
+
+                <p>Saison :</p>
+
+                <select>
+                    <option>Sélectionner</option>
+                    {% for saison in saisons %}
+                        <option>{{ saison.nom }}</option>
+                    {% endfor %}
+                </select>
+
+
+
+                <p>Type de fleur :</p>
+                <select>
+                    <option>Sélectionner</option>
+                    {% for fleur in fleurs %}
+                        <option>{{ fleur.nom }}</option>
+                    {% endfor %}
+                </select>
+
+
+                <p>Occasion :</p>
+                <select>
+                    <option>Sélectionner</option>
+                    {% for evenement in evenements %}
+                        <option>{{ evenement.type }}</option>
+                    {% endfor %}
+                </select>
+
+                <p>Prix du bouquet :</p>
+
+                <div class="range">
+                    <span class="range-from">0</span>
+                    <input type="range" value="15" max="100" min="1"  step="2">
+                    <span class="range-to">150</span>
+                </div>
+
+                <div>
+                    <button type="submit">
+                        creer mon bouquet
+                    </button>
+                </div>
+
+            </form>
         </div>
-    </div>
 
+    </main>
 
 
 {% endblock %}

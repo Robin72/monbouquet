@@ -6,6 +6,8 @@ PAGE D ACCCEUIL
 
 body {
 
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
 
 }
 
@@ -54,7 +56,7 @@ div.harmonie{
 
     height: 700px;
 
-    background-image:url("../image/fond.png") ;
+    background-image:url("../images/fond.png") ;
 
     background-size: cover;
     background-size: 110%;
@@ -114,3 +116,108 @@ a.button:hover {
 CONNEXION
  */
 
+
+/*-------
+CREER MON BOUQUET
+ */
+
+/* --------INDISPENSABLES--------- */
+
+/* BOITES */
+
+/*---------------------------------------------*/
+
+
+/*---------------------------------------------*/
+
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+h1{
+    color: #d69f9f;
+    padding-right: 50px;
+}
+
+p.titre {
+    color: #8b8b8b;
+    padding-right:50px;
+}
+
+div.range {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+div.range .range-from,
+.range .range-to {
+    margin: 0 5px;
+}
+
+div.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.form-container img {
+    margin: 0 50px;
+}
+
+
+select {
+    display : flex;
+
+}
+
+div.form-container p {
+    display: inline-block;
+
+    align-items: center;
+    justify-content: left;
+}
+
+
+
+
+
+/*
+OCCCASION
+ */
+
+div.container{
+
+}
+
+div.left{
+    display: inline-block;
+
+    width: 15%;
+}
+
+
+div.center{
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+
+}
+
+
+div.right{
+    display: inline-block;
+
+    width: 15%;
+}
+
+div.dr{
+    display: inline-block;
+
+    width: 15%;
+}

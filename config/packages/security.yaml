@@ -24,6 +24,8 @@ security:
             security: false
         main:
             anonymous: true
+            form_login :
+                default_target_path: /dashboard
             guard:
                 authenticators:
                     - App\Security\LoginFormAuthenticator

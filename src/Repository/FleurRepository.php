@@ -22,19 +22,18 @@ class FleurRepository extends ServiceEntityRepository
     // /**
     //  * @return Fleur[] Returns an array of Fleur objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function search(int $nbFleurs, array $couleurs)
     {
-        return $this->createQueryBuilder('f')
-            ->andWhere('f.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('f.id', 'ASC')
-            ->setMaxResults(10)
+        $qb = $this->createQueryBuilder('f');
+
+        return $qb->join('f.couleurs', 'c')
+            ->andWhere($qb->expr()->in('c.id', ':couleurs'))
+            ->setParameter('couleurs', $couleurs)
+            ->setMaxResults($nbFleurs)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Fleur
